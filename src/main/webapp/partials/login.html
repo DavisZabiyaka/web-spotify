@@ -1,11 +1,11 @@
 <form>
     <div id="email-container">
         <label for="email">Email: </label>
-        <input id="email" type="email" required>
+        <input id="email" type="email" ng-model="LoginCtrl.email" required>
     </div>
     <div id="password-container">
         <label for="password">Password: </label>
-        <input id="password" type="password" required>
+        <input id="password" type="password" ng-model="LoginCtrl.password" required>
     </div>
-    <button type="submit">Log In</button>
+    <button type="submit" ng-click="LoginCtrl.login()">Log In</button>
 </form>
