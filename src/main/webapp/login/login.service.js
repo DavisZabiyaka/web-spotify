@@ -8,10 +8,6 @@
                 get: {
                     method: 'GET',
                     params: {username: '@username', password: '@password'}
-                },
-                save: {
-                    method: 'POST',
-                    url: 'http://localhost:8080/user/create'
                 }
             });
         }
