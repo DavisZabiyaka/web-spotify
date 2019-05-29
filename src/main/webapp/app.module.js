@@ -44,8 +44,8 @@ angular
                 controller: 'PlaylistController',
                 controllerAs: 'PlaylistCtrl',
                 templateUrl: 'partials/playlist'
-            })
-            .otherwise({
-                redirectTo: '/login'
             });
+            // .otherwise({
+            //     redirectTo: '/login'
+            // });
     });
