@@ -23,7 +23,7 @@
             let newUser = new LoginService();
             newUser.$save(function(user) {
                 console.log('Successfully created user: ' + {userEmail: user.userEmail, encryptedPassword: user.encryptedPassword});
-                $location.path('#/login')
+                $location.path('#/home')
             }, function(error) {
                 if (error.status === 409) {
                     console.log('User already exists!');
