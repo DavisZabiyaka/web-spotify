@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
-@Entity
+@Entity(name = "USER")
 public class User {
 
     @Id
@@ -28,9 +28,10 @@ public class User {
         super();
     }
 
-    public User(String userEmail, byte[] encryptedPassword) {
+    public User(String userEmail, byte[] encryptedPassword, byte[] salt) {
         this.userEmail = userEmail;
         this.encryptedPassword = encryptedPassword;
+        this.salt = salt;
     }
 
     /**
