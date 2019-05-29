@@ -2,3 +2,54 @@ html, body {
     margin: 0px 0px 30px 0px;
     background: black;
 }
+
+#nav-bottom {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background: #263038;
+    color: #bcbfc4;
+}
+
+#nav-list {
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin: 0px 0px;
+    /* padding-bottom: 5px; */
+    /* padding: 0px 0px 5px 0px; */
+}
+
+#nav-home {
+    width: 33%;
+}
+
+#nav-home:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#nav-search {
+    width: 33%;
+}
+
+#nav-search:hover {
+    cursor: pointer;
+    color: white;
+}
+
+#nav-library {
+    width: 34%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #bcbfc4;
+}
+
+.nav-link:hover {
+    color: white;
+}

@@ -3,9 +3,10 @@
 
     angular
         .module('spotifyWebApp')
-        .controller('LoginController', ['$location', 'LoginService', LoginController]);
+        .controller('LoginController', ['$scope', '$location', 'LoginService', LoginController]);
 
-    function LoginController($location, LoginService) {
+    function LoginController($scope, $location, LoginService) {
+        $scope.hideMain = false;
         // let users = [];
 
         // LoginService.query(function(data) {
@@ -24,6 +25,7 @@
             newUser.$save(function(user) {
                 console.log('Successfully created user: ' + {userEmail: user.userEmail, encryptedPassword: user.encryptedPassword});
                 $location.path('#/home')
+                // $scope.hideMain = false;
             }, function(error) {
                 if (error.status === 409) {
                     console.log('User already exists!');
