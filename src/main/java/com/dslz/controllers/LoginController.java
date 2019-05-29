@@ -71,14 +71,14 @@ public class LoginController {
         password = "admin123";
         for (User user : users) {
             if (user.getUserEmail().equals(userEmail)) {
-                System.out.println("User already exists!");
+                // System.out.println("User already exists!");
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
         }
         byte[] salt = generateSalt();
         byte[] encryptedPassword = getEncryptPassword(password, salt);
         User newUser = new User(userEmail, encryptedPassword, salt);
-        System.out.println(newUser);
+        // System.out.println(newUser);
         userService.createUser(newUser);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

@@ -21,6 +21,30 @@ angular
                 controllerAs: 'LoginCtrl',
                 templateUrl: 'partials/createUser.html'
             })
+            .when('/home', 
+            {
+                controller: 'HomeController',
+                controllerAs: 'HomeCtrl',
+                templateUrl: 'partials/home.html'
+            })
+            .when('/search',
+            {
+                controller: 'SearchController',
+                controllerAs: 'SearchCtrl',
+                templateUrl: 'partials/search.html'
+            })
+            .when('/library',
+            {
+                controller: 'LibraryController',
+                controllerAs: 'LibraryCtrl',
+                templateUrl: 'partials/library.html'
+            })
+            .when('/playlist',
+            {
+                controller: 'PlaylistController',
+                controllerAs: 'PlaylistCtrl',
+                templateUrl: 'partials/playlist'
+            })
             .otherwise({
                 redirectTo: '/login'
             });
