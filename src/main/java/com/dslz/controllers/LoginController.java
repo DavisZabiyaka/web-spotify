@@ -71,6 +71,7 @@ public class LoginController {
         password = "admin123";
         for (User user : users) {
             if (user.getUserEmail().equals(userEmail)) {
+                System.out.println("User already exists!");
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
         }
