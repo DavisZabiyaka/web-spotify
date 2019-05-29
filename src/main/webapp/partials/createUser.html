@@ -1,5 +1,5 @@
-<header>Login</header>
-<form ng-submit="LoginCtrl.login()">
+<header>Sign Up</header>
+<form ng-submit="LoginCtrl.register()">
     <div id="email-container">
         <label for="email">Email: </label>
         <input id="email" type="email" ng-model="LoginCtrl.email" required>
@@ -8,8 +8,8 @@
         <label for="password">Password: </label>
         <input id="password" type="password" ng-model="LoginCtrl.password" required>
     </div>
-    <input type="submit" id="submit" value="Login"/>
-    <a href="#/register" class="btn-link">Register</a>
+    <input type="submit" id="submit" value="Create"/>
+    <a href="#/login" class="btn-link">Login</a>
     <div id="forgot-password">
         <a href="#/reset-password" class="btn-non-link">Forgot your password?</a>
     </div>

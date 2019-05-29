@@ -15,6 +15,12 @@ angular
                 controllerAs: 'LoginCtrl',
                 templateUrl: 'partials/login.html'
             })
+            .when('/register',
+            {
+                controller: 'LoginController',
+                controllerAs: 'LoginCtrl',
+                templateUrl: 'partials/createUser.html'
+            })
             .otherwise({
                 redirectTo: '/login'
             });
