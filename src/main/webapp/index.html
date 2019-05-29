@@ -8,7 +8,7 @@
         <title>Spotify Web Application</title>
     </head>
     <body>
-        <div main-screen ng-controller="LoginController" ng-hide="hideMain"></div>
+        <div main-screen ng-hide="hideMain"></div>
         <!-- Placeholder for views in AngularJS application -->
         <div ng-view="">
             
@@ -23,6 +23,7 @@
         <script src="app.module.js"></script>
         <script src="login/login.service.js"></script>
         <script src="login/login.controller.js"></script>
-        <script src="directives/main.module.js"></script>
+        <script src="directives/main.directive.js"></script>
+        <script src="home/home.controller.js"></script>
     </body>
 </html>
