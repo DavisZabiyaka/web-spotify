@@ -14,11 +14,11 @@
                 save: {
                     url: 'http://localhost:8080/user/create',
                     method: 'POST'
-                },
-                get: {
-                    method: 'GET',
-                    params: {username: '@username', password: '@password'}
-                }
+                }//,
+                // get: {
+                //     method: 'GET',
+                //     params: {username: '@username', password: '@password'}
+                // }
             });
         }
 })();

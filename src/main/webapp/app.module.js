@@ -9,18 +9,6 @@ angular
     .config(function($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('');
         $routeProvider
-            .when('/login',
-            {
-                controller: 'LoginController',
-                controllerAs: 'LoginCtrl',
-                templateUrl: 'partials/login.html'
-            })
-            .when('/register',
-            {
-                controller: 'LoginController',
-                controllerAs: 'LoginCtrl',
-                templateUrl: 'partials/createUser.html'
-            })
             .when('/home', 
             {
                 controller: 'HomeController',
@@ -46,6 +34,6 @@ angular
                 templateUrl: 'partials/playlist'
             })
             .otherwise({
-                redirectTo: '/login'
+                redirectTo: '/home'
             });
     });
