@@ -31,7 +31,7 @@ angular
             {
                 controller: 'PlaylistController',
                 controllerAs: 'PlaylistCtrl',
-                templateUrl: 'partials/playlist'
+                templateUrl: 'partials/playlist.html'
             })
             .otherwise({
                 redirectTo: '/home'

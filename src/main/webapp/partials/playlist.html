@@ -1,0 +1,20 @@
+<div class="ng-container">
+    <header>
+        <h1 id="page-title">Playlists</h1>
+    </header>
+    <main id="main-screen">
+        <!-- <md-button id="create-playlist" class="md-primary md-raised" type="submit" ng-click="showPrompt($event)"><strong>CREATE</strong></md-button> -->
+        <article id="{{ playlist.playlistId }}" class="general-article" ng-repeat="playlist in playlists">
+            <div id="article-content">
+                <h4 class="general-title">{{ playlist.playlistName }}</h4>
+                <div class="general-details">
+                    <h6>by {{ playlist.author }}</h6>
+                    <h6>&#9679; {{ playlist.noOfSongs }} songs</h6>
+                </div>
+            </div>
+            <button class="article-delete" ng-click="deletePlaylist(playlist)" ng-disabled="buttonDisabled">Delete</button>
+        </article>
+    </main>
+    <!-- <button id="count" class="article-delete">Count</button> -->
+    <!-- <p>Count: {{ count }}</p> -->
+</div>
