@@ -25,13 +25,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-            .antMatchers("/login.css", "/login.html", "/createUser.html")
+            .antMatchers("/login.css", "/login.html", "/register.html", "/register.css")
             .permitAll()
             .anyRequest()
             .authenticated()
             .and()
             .formLogin()
-            //.loginPage("/login.html")
+            .loginPage("/login.html")
             .permitAll();
     //     http
     //   .formLogin().loginPage("/partials/login.html").and()
