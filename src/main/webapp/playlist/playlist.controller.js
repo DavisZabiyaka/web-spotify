@@ -21,5 +21,14 @@
             counting++;
             console.log(counting);
         }
+
+        $scope.deletePlaylist = function(playlist) {
+            let targetedPlaylist = playlist;
+            $scope.playlistToBeDeleted = targetedPlaylist;
+            PlaylistService.delete({ playlistId: targetedPlaylist.playlistId }, function() {
+                console.log('Deleteing playlist: ' + targetedPlaylist.playlistId);
+                $scope.playlists.splice(targetedPlaylist.playlistId - 1, 1);
+            });
+        }
     }
 })();

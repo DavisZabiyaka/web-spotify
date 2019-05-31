@@ -24,6 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+            .csrf()
+            .disable()
             .authorizeRequests()
             .antMatchers("/login.css", "/login.html", "/register.html", "/register.css")
             .permitAll()
