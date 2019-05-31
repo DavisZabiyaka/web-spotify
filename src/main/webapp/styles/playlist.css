@@ -1,0 +1,43 @@
+#create-playlist {
+    margin: 70px auto 10px auto;
+    width: 30%;
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 50px;
+    background: white;
+    color: black;
+}
+
+.general-article {
+    display: inline-flex;
+    width: 100%;
+    text-align: left;
+}
+
+#article-content {
+    width: 95%;
+}
+
+.article-delete {
+    color: blue;
+    cursor: pointer;
+    background: black;
+}
+
+.general-title {
+    color: white;
+    margin: 0px 0px;
+    padding-left: 5px;
+}
+
+.general-details {
+    display: inline-flex;
+    color: #bcbfc4;
+    font-size: 12px;
+    width: 100%;
+    padding-left: 5px;
+}
+
+.general-details h3 {
+    margin: 5px 0px;
+}

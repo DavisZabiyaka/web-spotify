@@ -5,10 +5,11 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="styles/index.css" rel="stylesheet" type="text/css">
         <link href="styles/library.css" rel="stylesheet" type="text/css">
+        <link href="styles/playlist.css" rel="stylesheet" type="text/css">
         <title>Spotify Web Application</title>
     </head>
     <body>
-        <div main-screen ng-hide="hideMain"></div>
+        <div main-screen></div>
         <!-- Placeholder for views in AngularJS application -->
         <div ng-view="">
             
@@ -21,9 +22,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
         <!-- My Scripts -->
         <script src="app.module.js"></script>
-        <!-- <script src="login/login.service.js"></script>
-        <script src="login/login.controller.js"></script> -->
         <script src="directives/main.directive.js"></script>
         <script src="home/home.controller.js"></script>
+        <script src="search/search.controller.js"></script>
+        <script src="library/library.controller.js"></script>
+        <script src="playlist/playlist.service.js"></script>
+        <script src="playlist/playlist.controller.js"></script>
     </body>
 </html>
