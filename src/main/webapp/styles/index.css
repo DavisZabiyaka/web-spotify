@@ -53,3 +53,29 @@ html, body {
 .nav-link:hover {
     color: white;
 }
+
+#main-screen {
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    background: #263038;
+    color: white;
+}
+
+#page-title {
+    height: 100%;
+    padding: 0px 0px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 30px;
+    background: pink;
+}

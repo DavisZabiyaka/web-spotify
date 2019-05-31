@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
     @Bean
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withDefaultPasswordEncoder().username("abc@gmail.com").password("admin123").roles("ADMIN").build());
+        manager.createUser(User.withDefaultPasswordEncoder().username("abc@gmail.com").password("admin123").roles("USER").build());
         return manager;
     }
 
@@ -31,7 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
             .authenticated()
             .and()
             .formLogin()
-            .loginPage("/login.html")
+            // .loginPage("/login.html")
+            // .defaultSuccessUrl("/index")
             .permitAll();
     //     http
     //   .formLogin().loginPage("/partials/login.html").and()

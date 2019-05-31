@@ -1,0 +1,11 @@
+#library-list {
+    list-style-type: none;
+    font-size: 20px;
+    margin-top: 60px;
+    padding: 0px;
+}
+
+#library-list a div {
+    padding: 10px 0px;
+    width: 100%;
+}
