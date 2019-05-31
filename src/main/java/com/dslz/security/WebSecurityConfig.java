@@ -23,13 +23,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements W
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+            .authorizeRequests()
+            .antMatchers("/login.css", "/login.html", "/createUser.html")
+            .permitAll()
             .anyRequest()
             .authenticated()
             .and()
             .formLogin()
-            // .loginPage("/#/login")
+            //.loginPage("/login.html")
             .permitAll();
+    //     http
+    //   .formLogin().loginPage("/partials/login.html").and()
+    //   .authorizeRequests()
+    //     .antMatchers("/login.html", "/#/login.html", "/index.html", "/#/index", "/#/index.html", "/#/login").permitAll().anyRequest()
+    //     .authenticated();
     }
 
 }

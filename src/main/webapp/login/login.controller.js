@@ -8,7 +8,6 @@
     function LoginController($scope, $location, /*$locationProvider, */LoginService) {
         // $scope.hideMain = true;
         // let users = [];
-
         // LoginService.query(function(data) {
         //     console.log('Querying users...');
         //     users = data;

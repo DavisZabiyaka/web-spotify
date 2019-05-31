@@ -30,10 +30,11 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value = "login" /* , method = RequestMethod.POST */)
-    public String goToHomePageAfterSuccessfulLogin(@RequestParam("username") String username,
-            @RequestParam("password") String password) {
+    public String goToHomePageAfterSuccessfulLogin(/*@RequestParam("username") String username,
+            @RequestParam("password") String password*/) {
         // System.out.printf("\nUsername: %s\tPassword: %s\n", username, password);
         // return "redirect:/partials/placeholder.html";
+        System.out.println("Attempt login");
         return "Great!";
     }
 
@@ -48,6 +49,7 @@ public class LoginController {
         for (User user : users) {
             System.out.println(user);
         }
+        System.out.println("Attempt to get users");
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 /*
@@ -72,7 +74,7 @@ public class LoginController {
         password = "admin123";
         for (User user : users) {
             if (user.getUserEmail().equals(userEmail)) {
-                // System.out.println("User already exists!");
+                System.out.println("User already exists!");
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
         }
@@ -81,6 +83,7 @@ public class LoginController {
         User newUser = new User(userEmail, encryptedPassword, salt);
         // System.out.println(newUser);
         userService.createUser(newUser);
+        System.out.println("Attempting to create user");
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
