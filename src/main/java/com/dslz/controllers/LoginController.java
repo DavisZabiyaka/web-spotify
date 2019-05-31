@@ -16,12 +16,14 @@ import com.dslz.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class LoginController {
@@ -29,14 +31,29 @@ public class LoginController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "login" /* , method = RequestMethod.POST */)
-    public String goToHomePageAfterSuccessfulLogin(/*@RequestParam("username") String username,
-            @RequestParam("password") String password*/) {
-        // System.out.printf("\nUsername: %s\tPassword: %s\n", username, password);
-        // return "redirect:/partials/placeholder.html";
-        System.out.println("Attempt login");
-        return "Great!";
+    // @RequestMapping(value = "login", method = RequestMethod.GET)
+    // public String goToHomePageAfterSuccessfulLogin(/*@RequestParam("username") String username,
+    //         @RequestParam("password") String password*/) {
+    //     // System.out.printf("\nUsername: %s\tPassword: %s\n", username, password);
+    //     // return "redirect:/partials/placeholder.html";
+    //     System.out.println("Attempt login");
+    //     return "Great!";
+    // }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public ModelAndView welcomePage() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("index");
+        System.out.println("Are you reaching this point finally!?");
+        return model;
     }
+
+    @RequestMapping(value = "/loginError", method = RequestMethod.GET)
+    public String loginError(ModelMap model) {
+        model.addAttribute("error", "true");
+        return "login";
+    }
+
 
     @RequestMapping(value = "users", method = RequestMethod.GET)
     @ResponseBody
