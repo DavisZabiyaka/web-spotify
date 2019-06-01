@@ -2,8 +2,8 @@
 
 angular
     .module('spotifyWebApp')
-    .directive('mainScreen', function() {
+    .directive('mainWebSpotifyScreen', function() {
         return {
-            templateUrl: 'directives/main-screen.html'
+            templateUrl: 'directives/main-web-spotify-screen.html'
         };
     });
