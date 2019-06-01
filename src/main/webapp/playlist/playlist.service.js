@@ -7,8 +7,7 @@
         return $resource('http://localhost:8080/playlists/:playlistId', {}, {
             query: {
                 method: 'GET',
-                isArray: true,
-                cache: true
+                isArray: true
             },
             save: {
                 method: 'POST',
