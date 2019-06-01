@@ -3,32 +3,21 @@
 
     angular
     .module('spotifyWebApp')
-    .controller('PlaylistController', ['$scope','PlaylistService', PlaylistController]);
+    .controller('PlaylistController', ['PlaylistService', PlaylistController]);
 
-    function PlaylistController($scope, PlaylistService) {
-        $scope.count = 0;
-        let counting = 0;
-        console.log(counting);
-
-        PlaylistService.query(function(data) {
-            $scope.playlists = data;
+    function PlaylistController(PlaylistService) {
+        this.playlists = PlaylistService.query(function(data) {
             data.forEach((element) => console.log({playlistId: element.playlistId, playlistName: element.playlistName, author: element.author, noOfSongs: element.noOfSongs}));
         });
 
-        $scope.deletePlaylist = function(playlist) {
-            let something = playlist;
-            console.log(something);
-            counting++;
-            console.log(counting);
+        this.deletePlaylist = function(playlist) {
+            console.log('Deleting playlist: ' + playlist.playlistId);
+            PlaylistService.delete({ playlistId: playlist.playlistId }, function() {
+                console.log("Successfully deleted playlist");
+            });
+            this.playlists.splice(this.playlists.indexOf(playlist), 1);
         }
 
-        $scope.deletePlaylist = function(playlist) {
-            let targetedPlaylist = playlist;
-            $scope.playlistToBeDeleted = targetedPlaylist;
-            PlaylistService.delete({ playlistId: targetedPlaylist.playlistId }, function() {
-                console.log('Deleteing playlist: ' + targetedPlaylist.playlistId);
-                $scope.playlists.splice(targetedPlaylist.playlistId - 1, 1);
-            });
-        }
     }
+    
 })();

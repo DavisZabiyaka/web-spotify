@@ -29,8 +29,8 @@ angular
             })
             .when('/playlist',
             {
-                controller: 'PlaylistController',
-                controllerAs: 'PlaylistCtrl',
+                // controller: 'PlaylistController',
+                // controllerAs: 'pCtrl',
                 templateUrl: 'partials/playlist.html'
             })
             .otherwise({
