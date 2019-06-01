@@ -4,6 +4,7 @@ angular
     .module('spotifyWebApp', [
         'ui.bootstrap',
         'ngRoute',
+        // 'ngMaterial',
         'ngResource'
     ])
     .config(function($locationProvider, $routeProvider) {
