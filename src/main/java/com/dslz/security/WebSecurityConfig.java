@@ -8,39 +8,33 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
+@EnableWebSecurity(debug = true)
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-        manager.createUser(User.withDefaultPasswordEncoder().username("abc@gmail.com").password("admin123").roles("USER").build());
+        manager.createUser(User.withDefaultPasswordEncoder().username("user").password("password").roles("USER").build());
         return manager;
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //
         http
             .csrf()
             .disable()
             .authorizeRequests()
-            .antMatchers("/login.css", "/login.html", "/register.html", "/register.css")
+            .antMatchers("/css/**", "/register")
             .permitAll()
             .anyRequest()
             .authenticated()
             .and()
             .formLogin()
-            // .loginPage("/login.html")
-            // .defaultSuccessUrl("/index")
+            .loginPage("/login")
             .permitAll();
-    //     http
-    //   .formLogin().loginPage("/partials/login.html").and()
-    //   .authorizeRequests()
-    //     .antMatchers("/login.html", "/#/login.html", "/index.html", "/#/index", "/#/index.html", "/#/login").permitAll().anyRequest()
-    //     .authenticated();
     }
 
 }

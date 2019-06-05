@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns = "http://www.w3.org/1999/xhtml" 
+xmlns:th = "http://www.thymeleaf.org">
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="./register.css" rel="stylesheet" type="text/css">
+        <link href="../css/register.css" rel="stylesheet" type="text/css">
         <title>Spotify Register</title>
     </head>
     <body>
@@ -18,7 +19,7 @@
                 <input id="password" type="password" required>
             </div>
             <input type="submit" id="submit" value="Create"/>
-            <a href="http://localhost:8080/login.html" class="btn-link">Login</a>
+            <a href="/login" class="btn-link">Login</a>
             <div id="forgot-password">
                 <a href="#" class="btn-non-link">Forgot your password?</a>
             </div>
