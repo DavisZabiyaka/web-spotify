@@ -14,25 +14,25 @@ angular
             {
                 controller: 'HomeController',
                 controllerAs: 'HomeCtrl',
-                templateUrl: 'partials/home.html'
+                templateUrl: 'home/home.html'
             })
             .when('/search',
             {
                 controller: 'SearchController',
                 controllerAs: 'SearchCtrl',
-                templateUrl: 'partials/search.html'
+                templateUrl: 'search/search.html'
             })
             .when('/library',
             {
                 controller: 'LibraryController',
                 controllerAs: 'LibraryCtrl',
-                templateUrl: 'partials/library.html'
+                templateUrl: 'library/library.html'
             })
             .when('/playlist',
             {
                 controller: 'PlaylistController',
                 controllerAs: 'pCtrl',
-                templateUrl: 'partials/playlist.html'
+                templateUrl: 'playlist/playlist.html'
             })
             .otherwise({
                 redirectTo: '/home'
