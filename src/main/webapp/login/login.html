@@ -1,0 +1,17 @@
+<header>Login</header>
+<p th:if=${loginError} class="error">Wrong login credentials</p>
+<form th:action="@{/login}" method="POST">
+    <div id="email-container">
+        <label for="username">Email: </label>
+        <input id="username" name="username" autofocus required>
+    </div>
+    <div id="password-container">
+        <label for="password">Password: </label>
+        <input id="password" type="password" name="password" required>
+    </div>
+    <input type="submit" id="submit" value="Log in"/>
+    <a href="#/register" class="btn-link">Register</a>
+    <div id="forgot-password">
+        <a href="#" class="btn-non-link">Forgot your password?</a>
+    </div>
+</form>
